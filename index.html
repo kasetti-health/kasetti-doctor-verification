@@ -4,79 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KASETTI - Doctor Verification</title>
+  <title>KASETTI | Doctor Verification</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
       margin: 0;
-      padding: 20px;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #f3f6f9;
+      color: #17202a;
     }
 
-    .container {
-      max-width: 500px;
-      margin: 40px auto;
+    .header {
       background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 28px 20px 22px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
     }
 
-    h1 {
-      margin-bottom: 5px;
+    .logo {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 2px;
     }
 
     .tagline {
-      color: #555;
-      margin-bottom: 30px;
+      margin-top: 6px;
+      color: #667085;
+      font-size: 16px;
     }
 
-    .verified {
+    .card {
+      max-width: 520px;
+      margin: 35px auto;
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .status {
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      background: #eaf8ef;
+      color: #167a3f;
       font-size: 22px;
-      font-weight: bold;
-      margin: 20px 0;
+      font-weight: 700;
+      margin-bottom: 25px;
     }
 
-    .details {
-      text-align: left;
-      margin-top: 20px;
+    .status-small {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+      margin-top: 5px;
     }
 
-    .details p {
-      padding: 8px;
-      border-bottom: 1px solid #eee;
+    .doctor {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
-    .note {
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eaecf0;
+      font-size: 15px;
+    }
+
+    .label {
+      font-weight: 700;
+      color: #475467;
+    }
+
+    .value {
+      text-align: right;
+    }
+
+    .source {
+      margin-top: 22px;
+      padding: 14px;
+      background: #f8fafc;
+      border-radius: 10px;
       font-size: 13px;
-      color: #777;
-      margin-top: 25px;
+      color: #475467;
+      text-align: center;
+    }
+
+    .disclaimer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #98a2b3;
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #98a2b3;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        margin: 20px 15px;
+        padding: 22px;
+      }
+
+      .detail {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .value {
+        text-align: left;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="header">
+    <div class="logo">KASETTI</div>
+    <div class="tagline">Scan. Verify. Trust.</div>
+  </div>
 
-    <h1>KASETTI</h1>
+  <div class="card">
 
-    <div class="tagline">
-      Scan. Verify. Trust.
+    <div class="title">
+      Doctor Verification
     </div>
 
-    <h2>Doctor Verification</h2>
-
-    <div class="verified">
+    <div class="status">
       ✓ VERIFIED
+      <span class="status-small">
+        Demonstration verification result
+      </span>
     </div>
 
-    <div class="details">
+    <div class="doctor">
+      Dr. Anil Kumar
+    </div>
 
-      <p><strong>Doctor Name:</strong> Dr. Anil Kumar</p>
+    <div class="detail">
+      <span class="label">Qualification</span>
+      <span class="value">MBBS</span>
+    </div>
 
-      <p><strong>Qualification:</strong> MBBS</p>
+    <div class="detail">
+      <span class="label">Registration No.</span>
+      <span class="value">DEMO123456</span>
+    </div>
 
-      <p><strong>Registration
+    <div class="detail">
+      <span class="label">Registration Authority</span>
+      <span class="value">Medical Council</span>
+    </div>
+
+    <div class="detail">
+      <span class="label">Registration Status</span>
+      <span class="value">Active</span>
+    </div>
+
+    <div class="detail">
+      <span class="label">Verified On</span>
+      <span class="value">08 September 2026</span>
+    </div>
+
+    <div class="source">
+      🔐 <strong>Verification Source</strong><br>
+      Official medical-registration information
+    </div>
+
+    <div class="disclaimer">
+      This KASETTI page is a prototype using demonstration data.
+      It does not represent verification of a real doctor.
+    </div>
+
+  </div>
+
+  <div class="footer">
+    KASETTI — Know Authentic Status Easily Through Trusted Information
+  </div>
+
+</body>
+</html>
