@@ -224,25 +224,38 @@
 
 <script>
 function verifyDoctor() {
-  const reg = document.getElementById("regNumber").value.trim().toUpperCase();
-  const result = document.getElementById("verifyResult");
+    const input = document.getElementById("regNumber");
+    const result = document.getElementById("verifyResult");
+    const reg = input.value.trim().toUpperCase();
 
-  if (reg === "DEMO123456") {
-    result.innerHTML =
-      '<div style="background:#e8f7ee;padding:18px;border-radius:12px;color:#187a45;">' +
-      '<strong style="font-size:20px;">✓ VERIFIED</strong><br><br>' +
-      'Dr. Anil Kumar<br>' +
-      'MBBS<br>' +
-      'Registration No.: DEMO123456' +
-      '</div>';
-  } else {
-    result.innerHTML =
-      '<div style="background:#fff0f0;padding:18px;border-radius:12px;color:#b42318;">' +
-      '<strong>✕ NOT VERIFIED</strong><br><br>' +
-      'No demonstration record found for this registration number.' +
-      '</div>';
-  }
+    if (reg === "DEMO123456") {
+        result.innerHTML =
+        '<div style="background:#e8f7ee;padding:25px;border-radius:18px;text-align:center;">' +
+        '<strong style="font-size:22px;">✓ VERIFIED</strong><br><br>' +
+        '<strong>Dr. Anil Kumar</strong><br>' +
+        'MBBS<br>' +
+        'Registration No.: DEMO123456<br><br>' +
+        '<small>DEMONSTRATION DATA — NOT A REAL DOCTOR VERIFICATION</small>' +
+        '</div>';
+    } else {
+        result.innerHTML =
+        '<div style="background:#fff0f0;padding:25px;border-radius:18px;text-align:center;">' +
+        '<strong style="font-size:22px;">✕ NOT VERIFIED</strong><br><br>' +
+        'No demonstration record found for this registration number.' +
+        '</div>';
+    }
 }
+
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const qrReg = params.get("reg");
+
+    if (qrReg) {
+        const input = document.getElementById("regNumber");
+        input.value = qrReg;
+        verifyDoctor();
+    }
+};
 </script>
 </div>
 </body>
